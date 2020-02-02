@@ -11,17 +11,11 @@
 }
 
 #Header {
-    /* max-height: 6rem;
-    height: 6rem; */
-}
-
-.img {
-    width: 100%;
-    height: auto;
+    margin-bottom: 10px;
 }
 
 #cakeforumlogo{
-  height:3rem;
+  height:100;
   width:3rem;
 }
 
@@ -40,7 +34,7 @@ float: right;
 width:100%;
 }
 
-/* #Header .search-container button {
+#Header .search-container button {
   float: right;
   padding: 6px 10px;
   margin-top: 8px;
@@ -49,16 +43,16 @@ width:100%;
   font-size: 17px;
   border: none;
   cursor: pointer;
-} */
+}
 
-/* #Header input[type=text] {
+#Header input[type=text] {
 float: right;
 padding: 6px;
 margin-top: 8px;
 font-size: 17px;
 border: none;
 width:80%;
-} */
+}
 
 .navbar-collapse{
     background-color: #A9A9A9
@@ -67,19 +61,13 @@ width:80%;
     color:white;
 }
 
-.carousel-inner {
-    height: 300px;
-}
-.carousel-inner img {
-    /* height: 300px; */
-}
-
 .carousel .carousel-item {
-/* height: 300px; */
+height: 300px;
 }
 
 .carousel .carousel-item img {
-height: 300px;
+min-height: 300px;
+max-height: 400px;
 object-fit: cover;
 }
 
