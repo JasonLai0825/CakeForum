@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>CakeForum</title>
+    <!-- Bootstrap 4 CSS -->
+    <link rel="stylesheet" href="cakeforum/src/assets/css/bootstrap.min.css">
+    <!-- Jquery JS -->
+    <script src="cakeforum/src/assets/js/jquery-3.4.1.min.js"></script>
+    <!-- Popper JS -->
+    <script src="cakeforum/src/assets/js/popper.min.js"></script>
+    <!-- Bootstrap 4 JS -->
+    <script src="cakeforum/src/assets/js/bootstrap.min.js"></script>
+    <!-- Vue JS -->
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <!-- Vue-Router JS -->
+    <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="cakeforum/src/assets/css/mystylesheet.css">
+</head>
+
+<body>
+    <!-- Header start -->
+    <header id="Header">
+        <div class="container headerbar">
+            <div class="row">
+                <!-- Logo start -->
+                <div class="col-sm-2">
+                    <img src="./cakeforum/src/assets/logo.jpg" class="img">
+                </div>
+                <!-- Logo end -->
+
+                <!-- Search-bar start -->
+                <div class="col-sm-8 d-flex align-items-center">
+                    <div class="search-container">
+                        <div class="input-group mb-3">
+                            <input type="text" class="form-control w-75" placeholder="Search">
+                            <div class="input-group-append">
+                                <button class="btn" type="submit"><i class="fa fa-search"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Search-bar end -->
+
+                <!-- Action-btns-Group start -->
+                <div class="col-sm-2 d-flex justify-content-around align-items-center">
+                    <button type="button" class="btn">Log In</button>
+                    <button type="button" class="btn">Sign Up</button>
+                </div>
+                <!-- Action-btns-Group end -->
+            </div>
+        </div>
+    </header>
+    <!-- Header end -->
+
+    <!-- Main-Content start -->
+    <div id="content">
+        <router-view></router-view>
+    </div>
+    <!-- Main-Content end -->
+
+    <!-- Footer start -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-3">
+                    <h5 class="border-bottom">Get started</h5>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Sign Up</a></li>
+                        <li><a href="#">Downloads</a></li>
+                    </ul>
+                </div>
+                <div class="col-sm-3">
+                    <h5 class="border-bottom">About Us</h5>
+                    <ul>
+                        <li><a href="#">Company Information</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Reviews</a></li>
+                    </ul>
+                </div>
+                <div class="col-sm-3">
+                    <h5 class="border-bottom">Support</h5>
+                    <ul>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Help Desk</a></li>
+                        <li><a href="#">Forums</a></li>
+                    </ul>
+                </div>
+                <div class="col-sm-3">
+                    <h5 class="border-bottom">Informations</h5>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Footer end -->
+</body>
+
+<!-- Main Bundle JS -->
+<script src="cakeforum/main.bundle.js"></script>
+
+</html>
