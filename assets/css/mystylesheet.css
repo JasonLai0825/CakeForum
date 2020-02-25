@@ -5,24 +5,18 @@
 
 #myFooter .container{
     background-color: #2F4F4F;
-    }
+}
 #myFooter .container h5{
     color : white;
 }
 
 #Header {
-    /* max-height: 6rem;
-    height: 6rem; */
-}
-
-.img {
-    width: 100%;
-    height: auto;
+    margin-bottom: 10px;
 }
 
 #cakeforumlogo{
-  height:3rem;
-  width:3rem;
+    height:100;
+    width:3rem;
 }
 
 .headerbar{
@@ -36,29 +30,29 @@
 } 
 
 #Header .search-container {
-float: right;
-width:100%;
+    float: right;
+    width:100%;
 }
 
-/* #Header .search-container button {
-  float: right;
-  padding: 6px 10px;
-  margin-top: 8px;
-  margin-right: 16px;
-  background-color: #ddd;
-  font-size: 17px;
-  border: none;
-  cursor: pointer;
-} */
+#Header .search-container button {
+    float: right;
+    padding: 6px 10px;
+    margin-top: 8px;
+    margin-right: 16px;
+    background-color: #ddd;
+    font-size: 17px;
+    border: none;
+    cursor: pointer;
+}
 
-/* #Header input[type=text] {
-float: right;
-padding: 6px;
-margin-top: 8px;
-font-size: 17px;
-border: none;
-width:80%;
-} */
+#Header input[type=text] {
+    float: right;
+    padding: 6px;
+    margin-top: 8px;
+    font-size: 17px;
+    border: none;
+    width:80%;
+}
 
 .navbar-collapse{
     background-color: #A9A9A9
@@ -67,27 +61,22 @@ width:80%;
     color:white;
 }
 
-.carousel-inner {
-    height: 300px;
-}
-.carousel-inner img {
-    /* height: 300px; */
-}
-
 .carousel .carousel-item {
-/* height: 300px; */
+    height: 300px;
 }
 
 .carousel .carousel-item img {
-height: 300px;
-object-fit: cover;
+    min-height: 300px;
+    max-height: 400px;
+    object-fit: cover;
 }
 
 .navbar{
     margin-bottom: 5px;
 }
+
 .vertical-center {
     position: relative;
     top: 50%;
     transform: translateY(-50%);
-  }
+}
