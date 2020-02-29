@@ -31,6 +31,31 @@
       </div>
     </div>
     <!-- Banner-Carousel end --> 
+
+    <!-- informations-block start -->
+    <div class="row mt-4 mb-4 text-center">
+      <!-- hot-topics start -->
+      <div class="col-xl-4">
+        <h4>Hot Topics</h4>
+        <div class="hot-info-border"></div>
+      </div>
+      <!-- hot-topics end -->
+
+      <!-- hot-articles start -->
+      <div class="col-xl-4 border-left border-right">
+        <h4>Hot Articles</h4>
+        <div class="hot-info-border"></div>
+      </div>
+      <!-- hot-articles end -->
+
+      <!-- newest-articles start -->
+      <div class="col-xl-4">
+        <h4>Newest Articles</h4>
+        <div class="hot-info-border"></div>
+      </div>
+      <!-- newest-articles end -->
+    </div>
+    <!-- informations-block end -->
   </div>
 </template>
 

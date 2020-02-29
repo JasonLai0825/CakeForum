@@ -1,5 +1,6 @@
 const path = require('path');
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
+const config = require('config');
 module.exports = {
     mode: 'development',
     module: {
@@ -14,6 +15,6 @@ module.exports = {
     entry: './main.js',
     output: {
         filename: 'main.bundle.js',
-        path: path.resolve(__dirname, '/Apache24/htdocs/CakeForum/cakeforum'),
+        path: path.resolve(__dirname, config.get('development.webpack.outputPath')),
     }
 }
