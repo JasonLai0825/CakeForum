@@ -14,6 +14,6 @@ module.exports = {
     entry: './main.js',
     output: {
         filename: 'main.bundle.js',
-        path: path.resolve(__dirname, '/Apache24/htdocs/CakeForum/cakeforum'),
+        path: path.resolve(__dirname, '/xampp/htdocs/CakeForum/cakeforum'),
     }
 }

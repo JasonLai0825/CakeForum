@@ -31,6 +31,66 @@
       </div>
     </div>
     <!-- Banner-Carousel end --> 
+    <!--Front-end Start-->
+    <div class='container'>
+      <div class="row" float:right>
+          <div class="col-sm-6">
+              <h3>Front-end</h3>
+          </div>          
+            <div class="col-sm-6">
+                <a href="#" style='text-align:center;' class="pull-right vertical-center">+ view more</a>
+            </div>
+      </div>
+        <div class="card col-sm-3 border-0 text-center" >
+            <img class="card-img-top" v-bind:src="logojpg" alt="Card image cap">
+            <div class="card-block">
+                <h4 class="card-title">HTML</h4>
+            </div>
+        </div>
+        <div class="card col-sm-3 border-0 text-center" >
+            <img class="card-img-top" v-bind:src="logojpg" alt="Card image cap">
+            <div class="card-block">
+                <h4 class="card-title">css</h4>
+            </div>
+        </div>
+        <div class="card col-sm-3 border-0 text-center" >
+            <img class="card-img-top" v-bind:src="logojpg"  alt="Card image cap">
+            <div class="card-block">
+                <h4 class="card-title">bootstrap</h4>
+            </div>
+        </div>
+        <div class="card col-sm-3 border-0 text-center" >
+            <img class="card-img-top" v-bind:src="logojpg" alt="Card image cap">
+            <div class="card-block">
+                <h4 class="card-title">Vue.js</h4>
+            </div>
+        </div>
+      </div>
+      <!--Fornt-end End-->
+    <!--Back-end Start-->
+      <div class='container'>
+    <div class="row" float:right>
+        <div class="col-sm-6">
+            <h3>Back-end</h3>
+        </div>          
+          <div class="col-sm-6">
+              <a href="#" style='text-align:center;' class="pull-right vertical-center">+ view more</a>
+          </div>
+    </div>
+      <div class="card col-sm-6 border-0 text-center" >
+          <img class="card-img-top img" v-bind:src="logojpg" alt="Card image cap">
+          <div class="card-block">
+              <h4 class="card-title">HTML</h4>
+          </div>
+      </div>
+      <div class="card col-sm-6 border-0 text-center" >
+          <img class="card-img-top img" v-bind:src="logojpg" alt="Card image cap">
+          <div class="card-block">
+              <h4 class="card-title">Vue.js</h4>
+          </div>
+      </div>
+    <!--Back-end End-->
+</div>
   </div>
 </template>
 
@@ -38,7 +98,8 @@
 export default {
   data() {
     return {
-      banner_img3: 'https://www.taiwan.net.tw/att/1/big_scenic_spots/pic_3266_19.jpg'
+      banner_img3: 'https://www.taiwan.net.tw/att/1/big_scenic_spots/pic_3266_19.jpg',
+      logojpg:'./cakeforum\\src\\assets\\logo.jpg'
     }
   }
 }
