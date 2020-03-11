@@ -31,13 +31,16 @@
       </div>
     </div>
     <!-- Banner-Carousel end --> 
-
     <!-- informations-block start -->
     <div class="row mt-4 mb-4 text-center">
       <!-- hot-topics start -->
       <div class="col-xl-4">
         <h4>Hot Topics</h4>
         <div class="hot-info-border"></div>
+        <article>
+          <h2>Google Chrome</h2>
+          <p>Google Chrome is a web browser developed by Google, released in 2008. Chrome is the world's most popular web browser today!</p>
+        </article>
       </div>
       <!-- hot-topics end -->
 
@@ -45,6 +48,10 @@
       <div class="col-xl-4 border-left border-right">
         <h4>Hot Articles</h4>
         <div class="hot-info-border"></div>
+        <article>
+          <h2>Google Chrome</h2>
+          <p>Google Chrome is a web browser developed by Google, released in 2008. Chrome is the world's most popular web browser today!</p>
+        </article>
       </div>
       <!-- hot-articles end -->
 
@@ -52,10 +59,79 @@
       <div class="col-xl-4">
         <h4>Newest Articles</h4>
         <div class="hot-info-border"></div>
+        <article>
+          <h2>Google Chrome</h2>
+          <p>Google Chrome is a web browser developed by Google, released in 2008. Chrome is the world's most popular web browser today!</p>
+        </article>
       </div>
       <!-- newest-articles end -->
     </div>
     <!-- informations-block end -->
+    <!--Front-end Start-->
+    <div class='container'>
+      <div class="row" float:right>
+          <div class="col-sm-6">
+              <h3>Front-end</h3>
+          </div>          
+            <div class="col-sm-6">
+                <a href="#" style='text-align:center;float: right;' class="pull-right vertical-center">+ view more</a>
+            </div>
+      </div>
+      <div class="row">
+        <div class="card col-sm-3 border-0 text-center" >
+            <img class="card-img-top" v-bind:src="logojpg" alt="Card image cap">
+            <div class="card-block">
+                <h4 class="card-title">HTML</h4>
+            </div>
+        </div>
+        <div class="card col-sm-3 border-0 text-center" >
+            <img class="card-img-top" v-bind:src="logojpg" alt="Card image cap">
+            <div class="card-block">
+                <h4 class="card-title">css</h4>
+            </div>
+        </div>
+        <div class="card col-sm-3 border-0 text-center" >
+            <img class="card-img-top" v-bind:src="logojpg"  alt="Card image cap">
+            <div class="card-block">
+                <h4 class="card-title">bootstrap</h4>
+            </div>
+        </div>
+        <div class="card col-sm-3 border-0 text-center" >
+            <img class="card-img-top" v-bind:src="logojpg" alt="Card image cap">
+            <div class="card-block">
+                <h4 class="card-title">Vue.js</h4>
+            </div>
+        </div>
+        </div>
+      </div>
+      <!--Fornt-end End-->
+    <!--Back-end Start-->
+      <div class='container'>
+    <div class="row" float:right>
+        <div class="col-sm-6">
+            <h3>Back-end</h3>
+        </div>          
+          <div class="col-sm-6">
+              <a href="#" style='text-align:center;float: right;' class="pull-right vertical-center">+ view more</a>
+          </div>
+    </div>
+    <div class="row">
+      <div class="card col-sm-6 border-0 text-center" >
+          <img class="card-img-top img" v-bind:src="logojpg" alt="Card image cap">
+          <div class="card-block">
+              <h4 class="card-title">HTML</h4>
+          </div>
+      </div>
+      <div class="card col-sm-6 border-0 text-center" >
+          <img class="card-img-top img" v-bind:src="logojpg" alt="Card image cap">
+          <div class="card-block">
+              <h4 class="card-title">Vue.js</h4>
+          </div>
+      </div>
+      </div>
+    <!--Back-end End-->
+</div>
+    
   </div>
 </template>
 
@@ -63,7 +139,8 @@
 export default {
   data() {
     return {
-      banner_img3: 'https://www.taiwan.net.tw/att/1/big_scenic_spots/pic_3266_19.jpg'
+      banner_img3: 'https://www.taiwan.net.tw/att/1/big_scenic_spots/pic_3266_19.jpg',
+      logojpg:'./cakeforum\\src\\assets\\logo.jpg'
     }
   }
 }

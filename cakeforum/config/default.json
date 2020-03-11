@@ -1,7 +1,7 @@
 {
     "development": {
         "webpack": {
-            "outputPath": "/Apache24/htdocs/CakeForum/cakeforum"
+            "outputPath": "/xampp/htdocs/CakeForum/cakeforum"
         }
     }
 }
