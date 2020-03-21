@@ -1,0 +1,247 @@
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- 資料庫： `cakeforum`
+--
+CREATE DATABASE IF NOT EXISTS `cakeforum` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci;
+USE `cakeforum`;
+
+-- --------------------------------------------------------
+
+--
+-- 資料表結構 `article`
+--
+
+CREATE TABLE `article` (
+  `id` int NOT NULL COMMENT '文章編號',
+  `m_id` int NOT NULL COMMENT '會員編號',
+  `t_id` int NOT NULL COMMENT '主題編號',
+  `title` varchar(100) NOT NULL COMMENT '文章標題',
+  `content` text NOT NULL COMMENT '文章內容',
+  `tags` varchar(50) NOT NULL COMMENT '文章標籤編號',
+  `create_date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '建立時間',
+  `view_times` int NOT NULL DEFAULT '0' COMMENT '瀏覽次數',
+  `like_times` int NOT NULL DEFAULT '0' COMMENT '按讚次數',
+  `status` int NOT NULL DEFAULT '1' COMMENT '啟用狀態 (0: 刪除; 1: 顯示)',
+  `remarks` varchar(50) DEFAULT NULL COMMENT '備註'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+-- --------------------------------------------------------
+
+--
+-- 資料表結構 `comment`
+--
+
+CREATE TABLE `comment` (
+  `a_id` int NOT NULL COMMENT '文章編號',
+  `m_id` int NOT NULL COMMENT '會員編號',
+  `content` text NOT NULL COMMENT '留言內容',
+  `create_date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '建立時間',
+  `status` int NOT NULL DEFAULT '1' COMMENT '啟用狀態 (0: 刪除; 1: 顯示)'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+-- --------------------------------------------------------
+
+--
+-- 資料表結構 `favorite`
+--
+
+CREATE TABLE `favorite` (
+  `m_id` int NOT NULL COMMENT '會員編號',
+  `a_id` int NOT NULL COMMENT '文章編號',
+  `create_date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '建立時間',
+  `status` int NOT NULL COMMENT '啟用狀態 (0: 刪除; 1: 顯示)'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+-- --------------------------------------------------------
+
+--
+-- 資料表結構 `member`
+--
+
+CREATE TABLE `member` (
+  `id` int NOT NULL COMMENT '會員編號',
+  `account` varchar(50) NOT NULL COMMENT '會員帳號',
+  `password` varchar(100) NOT NULL COMMENT '會員密碼',
+  `email` varchar(100) NOT NULL COMMENT '會員信箱',
+  `create_date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '建立時間',
+  `verify_code` varchar(100) NOT NULL COMMENT '註冊驗證碼',
+  `status` int NOT NULL COMMENT '啟用狀態 (0: 停用; 1: 啟用)',
+  `remarks` varchar(50) NOT NULL COMMENT '備註'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+-- --------------------------------------------------------
+
+--
+-- 資料表結構 `operate_log`
+--
+
+CREATE TABLE `operate_log` (
+  `m_id` int NOT NULL COMMENT '會員編號',
+  `o_id` int NOT NULL COMMENT '操作類型編號',
+  `operation` varchar(100) NOT NULL COMMENT '操作說明',
+  `create_date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '建立時間',
+  `remarks` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL COMMENT '備註'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+-- --------------------------------------------------------
+
+--
+-- 資料表結構 `operation_action`
+--
+
+CREATE TABLE `operation_action` (
+  `id` int NOT NULL COMMENT '操作類型編號',
+  `name` varchar(40) NOT NULL COMMENT '操作名稱',
+  `status` int NOT NULL COMMENT '啟用狀態 (0: 停用; 1: 啟用)',
+  `remarks` varchar(50) NOT NULL COMMENT '備註'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+-- --------------------------------------------------------
+
+--
+-- 資料表結構 `search_log`
+--
+
+CREATE TABLE `search_log` (
+  `id` int NOT NULL COMMENT '紀錄編號',
+  `keywords` varchar(50) NOT NULL COMMENT '搜尋關鍵字',
+  `page` int NOT NULL COMMENT '搜尋頁碼',
+  `create_date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '建立時間',
+  `remarks` varchar(50) NOT NULL COMMENT '備註'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+-- --------------------------------------------------------
+
+--
+-- 資料表結構 `tag`
+--
+
+CREATE TABLE `tag` (
+  `id` int NOT NULL COMMENT '編號',
+  `name` varchar(30) NOT NULL COMMENT '標籤名稱',
+  `create_date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '建立時間',
+  `remarks` varchar(50) DEFAULT NULL COMMENT '備註'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+-- --------------------------------------------------------
+
+--
+-- 資料表結構 `topic`
+--
+
+CREATE TABLE `topic` (
+  `id` int NOT NULL COMMENT '主題編號',
+  `parent_id` int NOT NULL DEFAULT '0' COMMENT '上層主題編號',
+  `name` varchar(40) NOT NULL COMMENT '主題名稱',
+  `create_date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '建立時間',
+  `view_times` int NOT NULL DEFAULT '0' COMMENT '瀏覽次數',
+  `status` int NOT NULL DEFAULT '1' COMMENT '啟用狀態 (0: 停用; 1: 啟用)',
+  `remarks` varchar(50) DEFAULT NULL COMMENT '備註'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+-- --------------------------------------------------------
+
+--
+-- 資料表結構 `view_log`
+--
+
+CREATE TABLE `view_log` (
+  `a_id` int NOT NULL COMMENT '文章編號',
+  `create_date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '建立時間',
+  `remarks` varchar(50) NOT NULL COMMENT '備註'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- 已傾印資料表的索引
+--
+
+--
+-- 資料表索引 `article`
+--
+ALTER TABLE `article`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- 資料表索引 `member`
+--
+ALTER TABLE `member`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- 資料表索引 `operation_action`
+--
+ALTER TABLE `operation_action`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- 資料表索引 `search_log`
+--
+ALTER TABLE `search_log`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- 資料表索引 `tag`
+--
+ALTER TABLE `tag`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- 資料表索引 `topic`
+--
+ALTER TABLE `topic`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- 在傾印的資料表使用自動遞增(AUTO_INCREMENT)
+--
+
+--
+-- 使用資料表自動遞增(AUTO_INCREMENT) `article`
+--
+ALTER TABLE `article`
+  MODIFY `id` int NOT NULL AUTO_INCREMENT COMMENT '文章編號', AUTO_INCREMENT=2;
+
+--
+-- 使用資料表自動遞增(AUTO_INCREMENT) `member`
+--
+ALTER TABLE `member`
+  MODIFY `id` int NOT NULL AUTO_INCREMENT COMMENT '會員編號', AUTO_INCREMENT=2;
+
+--
+-- 使用資料表自動遞增(AUTO_INCREMENT) `operation_action`
+--
+ALTER TABLE `operation_action`
+  MODIFY `id` int NOT NULL AUTO_INCREMENT COMMENT '操作類型編號';
+
+--
+-- 使用資料表自動遞增(AUTO_INCREMENT) `search_log`
+--
+ALTER TABLE `search_log`
+  MODIFY `id` int NOT NULL AUTO_INCREMENT COMMENT '紀錄編號';
+
+--
+-- 使用資料表自動遞增(AUTO_INCREMENT) `tag`
+--
+ALTER TABLE `tag`
+  MODIFY `id` int NOT NULL AUTO_INCREMENT COMMENT '編號';
+
+--
+-- 使用資料表自動遞增(AUTO_INCREMENT) `topic`
+--
+ALTER TABLE `topic`
+  MODIFY `id` int NOT NULL AUTO_INCREMENT COMMENT '主題編號';
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

@@ -35,12 +35,19 @@
     <div class="row mt-4 mb-4 text-center">
       <!-- hot-topics start -->
       <div class="col-xl-4">
-        <h4>Hot Topics</h4>
+        <h4>Hot Topics test</h4>
         <div class="hot-info-border"></div>
-        <article>
+        <!-- <article>
           <h2>Google Chrome</h2>
           <p>Google Chrome is a web browser developed by Google, released in 2008. Chrome is the world's most popular web browser today!</p>
-        </article>
+        </article> -->
+        <table>
+          <tbody>
+            <tr v-for="(article,index) in hot_articles" :key="index">
+              <td>{{ article.title }}</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
       <!-- hot-topics end -->
 
@@ -140,8 +147,17 @@ export default {
   data() {
     return {
       banner_img3: 'https://www.taiwan.net.tw/att/1/big_scenic_spots/pic_3266_19.jpg',
-      logojpg:'./cakeforum\\src\\assets\\logo.jpg'
+      logojpg:'./cakeforum\\src\\assets\\logo.jpg',
+      hot_articles: null
     }
+  },
+  mounted() {
+    this.$axios
+      .get('http://localhost/CakeForum/api/getAllArticles')
+      .then(response => (this.hot_articles = response.data.articles))
+      .catch(function(error) {
+        console.log(error)
+      })
   }
 }
 </script>

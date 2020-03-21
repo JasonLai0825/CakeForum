@@ -16,5 +16,10 @@ module.exports = {
     output: {
         filename: 'main.bundle.js',
         path: path.resolve(__dirname, config.get('development.webpack.outputPath')),
+    },
+    resolve: {
+        alias: {
+            'vue$': 'vue/dist/vue.esm.js'
+        }
     }
 }
